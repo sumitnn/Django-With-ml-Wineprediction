@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Wine Prediction
+{% endblock %}
+
+<!-- Form start  -->
+<!-- ____________________________________________________________________________________ -->
+
+
+
+{% block body %}
+<div class="container mt-4">
+    <div class="row">
+        <h1 class="text-center">Wine Quality Prediction Using ML</h1>
+        <div class="col-md-4 mt-3">
+
+
+            <!-- fixed acidity citric acid free sulfur dioxide sulphates alcohol -->
+            <form method="Post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Fixed Acidity</label>
+                    <input type="text" class="form-control" name="fixedacidity" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" required>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Citric Acid</label>
+                    <input type="text" class="form-control" name="citric" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Free Sulphur Dioxide </label>
+                    <input type="text" class="form-control" name="sulphur" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Sulphate</label>
+                    <input type="text" class="form-control" name="sulphate" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Alcohol</label>
+                    <input type="text" class="form-control" name="alcohol" id="exampleInputPassword1" required>
+                </div>
+                <button type="submit" class="btn btn-outline-danger">Predict Quality</button>
+            </form>
+
+
+        </div>
+        <div class="col-md-8">
+            <img src="{% static 'road-trip-with-raj-O3osJ17G1UA-unsplash.jpg' %}">
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!-- ______________________________________________________________________ -->
